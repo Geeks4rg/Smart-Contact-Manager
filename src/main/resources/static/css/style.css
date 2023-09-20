@@ -1,0 +1,77 @@
+
+
+
+
+
+
+
+body{
+	background: rgb(192, 192, 192);
+}
+bg-primary{
+	background: rgb(64, 128, 128);
+}
+.banner{
+	width: 100%;
+	height: 93vh;
+	background: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,.35)),url(../images/banner.jpg);
+	background-size: cover;
+	color: white;
+}
+.my-card{
+	
+	padding: 20px;
+	background: #ffffff;
+	
+}
+.container{
+	display: flex;
+	z-index: +1;
+	justify-content: center;
+	
+}
+
+.back-video{
+	display: flex;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	
+}
+
+
+@media(min-aspect-ratio: 16/9){
+	.back-video{
+	width:100%;
+	height: auto;
+	}
+	
+}
+
+@media(max-aspect-ratio: 16/9){
+	.back-video{
+	width:auto;
+	height: 100%;
+}
+	
+
+/*Side Bar*/
+.sidebar{
+	width: 18%;
+	background: white;
+	z-index: 999999;
+	
+}
+
+.content{
+	
+	margin-left: 20%;
+}
+
+
+
+
+
+}
+

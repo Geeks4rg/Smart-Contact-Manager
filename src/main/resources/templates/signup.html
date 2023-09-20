@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeLeaf.org" th:replace="base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+
+	<section>
+	
+	<div class="back-video">
+		<video autoplay loop muted plays-inline>
+			<source th:src="@{/images/banner.mp4}"></source>
+		</video>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="my-card mt-2">
+						<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert"
+							role="alert">
+							<p class="text-center" th:text="${session.message.content}"></p>
+
+							<th:block th:text="${@messeageRemover.removemessage()}"></th:block>
+						</div>
+
+						<div class="container text-center">
+							<img style="width: 64.5px;" src="" th:src="@{/img/add-user.png}" alt="" />
+						</div>
+						<h1 class="text-center">Register Here !!!</h1>
+						<form action="" th:action="@{/do_register}" method="post" th:object="${user}">
+
+							<div class="form-group">
+								<label for="name_field">Name</label>
+								<input name="name" type="name"
+									th:classappend="${#fields.hasErrors('name') ? 'is-invalid':''}" class="form-control"
+									id="name_field" placeholder="Enter your name" required th:value="${user.name}">
+
+								<div class="invalid-feedback" th:each="e:${#fields.errors('name')}" th:text="${e}">
+
+								</div>
+
+							</div>
+							<div class="form-group">
+								<label for="email_field">Email</label>
+								<input name="email" type="email" th:value="${user.email}"
+									th:classappend="${#fields.hasErrors('email') ? 'is-invalid':''}"
+									class="form-control" id="email_field" placeholder="xyz@example.com" required>
+
+								<div class="invalid-feedback" th:each="e:${#fields.errors('email')}" th:text="${e}">
+
+								</div>
+
+							</div>
+							<div class="form-group">
+								<label for="password_field">Password</label>
+								<input name="password" type="password"
+									th:value="${user.password}"
+									th:classappend="${#fields.hasErrors('password') ? 'is-invalid':''}"
+									class="form-control" id="password_field"
+									placeholder="use special charactor for a strog password" required>
+
+								<div class="invalid-feedback" th:each="e:${#fields.errors('password')}" th:text="${e}">
+
+								</div>
+
+								<div class="form-group">
+									<label for="about_field">Write Something about yourself</label>
+									<textarea rows="6" 
+									
+				
+									th:classappend="${#fields.hasErrors('about') ? 'is-invalid':''}"
+									class="form-control" name="about" th:value="${user.about}"
+										placeholder="Description must have 50 to 500 character"></textarea>
+
+									<div class="invalid-feedback" th:each="e:${#fields.errors('about')}"
+										th:text="${e}">
+									</div>
+
+									<div class="form-group form-check">
+										<input type="checkbox" name="agreement" class="form-check-input"
+											id="agreement" />
+
+										<label for="agreement"> Accept the Terms and Condition for SignUp</label>
+
+									</div>
+
+									<div class="container text-center">
+										<button type="submit" class="btn btn-primary">Submit</button>
+										<button type="reset" class="btn btn-primary">Reset</button>
+									</div>
+						</form>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+		
+	</section>
+	<script src="../static/js/script.js"></script>
+
+</body>
+
+</html>
