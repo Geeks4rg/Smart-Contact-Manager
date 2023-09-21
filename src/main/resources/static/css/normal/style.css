@@ -13,6 +13,7 @@ body{
 	position: fixed;
 	padding-top: 40px;
 	color: rgb(192, 192, 192);
+	z-index: +5;
 }
 
 .sidebar a{
