@@ -1,0 +1,91 @@
+body{
+	background: rgb(192, 192, 192);
+}
+
+
+
+/*Side Bar*/
+.sidebar{
+	display: block;
+	width: 18%;
+	background: rgb(37, 53, 107);
+	height: 100%;
+	position: fixed;
+	padding-top: 40px;
+	color: rgb(192, 192, 192);
+}
+
+.sidebar a{
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	color: white;
+	border: rgb(192, 192, 192);
+}
+.sidebar a:hover{
+	background: rgb(192, 192, 192);
+	color: rgb(37, 53, 107);
+}
+
+
+.sidebar .divider{
+	height: 0.5px;
+	width: 100%;
+	background:rgb(255, 255, 255);
+	margin-top: 10px;
+}
+
+@media only screen and (max-width : 600px){
+	.sidebar{
+		display: none;
+		width: 80% !important;
+		background: rgb(37, 53, 107);
+		height: 100vh;
+		position: fixed;
+		padding-top: 20%;
+		
+	}
+	.content{
+		margin-left: 0% !important;
+	}
+}
+
+.content{
+	
+	margin-left: 20%;
+	
+}
+
+.sidebar .crossbtn{
+	position: absolute;
+	top: 0;
+	right: 35px;
+	font-size: 36px;
+	cursor: pointer;
+}
+
+.my_profile_picture{
+	
+	
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	object-fit: cover;
+	border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

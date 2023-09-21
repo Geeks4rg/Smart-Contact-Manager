@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeLeaf.org" th:replace="normal/base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+
+	<section>
+		<!--<div >
+			<h1 class="font-weight-bold">User DashBoard</h1>
+			<h1 class="font-weight-bold">Welcome <span th:text="${user.name}"></span></h1>
+			<h1 class="font-weight-bold"> Your Email id is <span th:text="${user.email}"></span></h1>
+			<p> Welcome <span th:text="${user.name}"></span> 
+				very efficient and smarter way of handljckjdsbbdskbkdsbkbsding contacts.	
+				</p>
+				<button class="btn bg-primary btn-lg text-white">Get Started</button>
+		</div>-->
+		
+		<div class="container">
+			<div class="card">
+				<div class="card-body text-center">
+					<img src="" style="height: 200px; width: 200px;" class="my_profile_picture" th:src="@{'/images/'+${user.imageurl}}" alt="profile picture" />
+					
+					<h2 class="font-weight-bold">Welcome <span th:text="${user.name}"></span></h2>
+						<a th:href="@{/user/add-contact}" class="btn btn-primary mt-4 btn-sm3 text-upercase"> Add Contact</a>
+					
+				</div>
+			</div>
+		</div>
+		
+		
+		
+	</section>
+
+</body>
+
+</html>

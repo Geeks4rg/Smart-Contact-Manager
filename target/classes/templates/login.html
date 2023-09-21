@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeLeaf.org" th:replace="base::Layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<section>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+		integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+		<link rel="stylesheet" th:href="@{/css/Loginstyle.css}" />
+		<div>
+			
+			<video autoplay loop muted plays-inline class="back-video">
+				<source th:src="@{/images/banner.mp4}"></source>
+			</video>
+			<!--<img class="background-image" th:src="@{/images/blue-white-yellow-background.jpg}" alt="Background" />-->
+			<div class="login-form">
+				
+				<div class="wrapper fadeInDown">
+					<div id="formContent">
+						<!-- Tabs Titles -->
+						<h2 class="active"> Sign In </h2>
+						<h2 class="inactive underlineHover" th:href="@{/dologin}" href="#">Sign Up </h2>
+
+						<!-- Icon -->
+						<div class="fadeIn first">
+							<img class="loginimage" th:src="@{/images/Loginicon.png}" , id="icon" alt="User Icon" />
+						</div>
+
+						<!-- Login Form -->
+						<div class="emassage">
+							<div  th:if="${param.error}" class="alert alert-danger">
+							 
+							 Invalid Username and Password
+							<th:block th:text="${@messeageRemover.removemessage()}"></th:block>
+						</div>
+						<div th:if="${param.logout}" class="alert alert-success">
+							 
+							 You have been logout 
+							<th:block th:text="${@messeageRemover.removemessage()}"></th:block>
+						</div>
+						</div>
+						
+						
+						
+						<form class="loginintosite" id="loginintosite" th:action="@{/signin}" action="#" method="post" >
+							<input type="text" id="login" class="fadeIn second" name="username" placeholder="Email">
+							<input type="password" id="password" class="fadeIn third" name="password"
+								placeholder="Password">
+							<input type="submit" class="fadeIn fourth" value="Log In">
+						</form>
+
+						<!-- Remind Passowrd -->
+						<div id="formFooter">
+							<a class="underlineHover" href="#">Forgot Password?</a>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+</body>
+
+</html>
