@@ -33,7 +33,7 @@ public class HomeController {
 		model.addAttribute("tittle","Home - Smart Contact Manager");
 		
 		
-		return "home";
+		return "index";
 		
 		
 	}
