@@ -33,7 +33,7 @@ bg-primary{
 
 .back-video{
 	display: flex;
-	position: absolute;
+	position: fixed;
 	right: 0;
 	bottom: 0;
 	z-index: -1;
@@ -69,7 +69,9 @@ bg-primary{
 	margin-left: 20%;
 }
 
-
+.signup-form.signup-field{
+	height: 50%;
+}
 
 
 
