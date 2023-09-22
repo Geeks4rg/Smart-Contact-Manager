@@ -175,16 +175,17 @@ public class UserController {
 	public String deleteContact(@PathVariable("cid") Integer cId, Model model, Principal principal,
 			HttpSession session) {
 
-		Optional<Contact> contactOptional = this.contactRepository.findById(cId);
-		Contact contact = contactOptional.get();
+		
+		Contact contact =this.contactRepository.findById(cId).get();
 
-		String username = principal.getName();
+		
 
-		User user = this.userRepository.getUserByItsName(username);
+		User user = this.userRepository.getUserByItsName(principal.getName());
 
 		if (user.getId() == contact.getUser().getId()) {
-			contact.setUser(null);
-			this.contactRepository.delete(contact);
+			
+			user.getContact().remove(contact);
+			this.userRepository.save(user);
 		}
 
 		session.setAttribute("message", new Messege("Contact Deleted successfully", "success"));
