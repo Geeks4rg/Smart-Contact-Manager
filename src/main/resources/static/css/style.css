@@ -45,6 +45,7 @@ bg-primary{
 	.back-video{
 	width:100%;
 	height: auto;
+	position: fixed;
 	}
 	
 }
@@ -53,6 +54,8 @@ bg-primary{
 	.back-video{
 	width:auto;
 	height: 100%;
+	position: fixed;
+	
 }
 	
 
