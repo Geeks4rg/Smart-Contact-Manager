@@ -22,6 +22,7 @@ bg-primary{
 	
 	padding: 20px;
 	background: #ffffff;
+	border-radius: 35px 35px 35px 35px;
 	
 }
 .container{
@@ -37,6 +38,7 @@ bg-primary{
 	right: 0;
 	bottom: 0;
 	z-index: -1;
+	object-fit:fill;
 	
 }
 

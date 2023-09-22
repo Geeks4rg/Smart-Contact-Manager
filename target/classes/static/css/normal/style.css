@@ -1,5 +1,6 @@
 body{
-	background: rgb(192, 192, 192);
+	/*background: #edf2f4*/
+	background:  #90e0ef;
 }
 
 
@@ -75,7 +76,13 @@ body{
 	border: 1px solid black;
 }
 
-
+.card{
+	
+	padding: 20px;
+	background: #ffffff;
+	border-radius: 35px 35px 35px 35px;
+	
+}
 
 
 
